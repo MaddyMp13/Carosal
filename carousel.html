@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-size: 15px;
+            font-family: Poppins, Arial, Helvetica, sans-serif;
+
+        }
+
+        .parent {
+            width: 100%;
+            position: relative;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .c-width {
+            width: 50%;
+            height: 100vh;
+        }
+
+        .child1 {
+            /* overflow: hidden; */
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .child1 img {
+            width: 100%;
+            object-fit: cover;
+            background-size: cover;
+        }
+
+        .child2 {
+            background-color: #F5F5F7;
+            z-index: 89;
+        }
+
+        .carosal-parent {
+            width: 650px;
+            padding: 50px 0px;
+            overflow: hidden;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: 65%;
+            top: 50%;
+            z-index: 98;
+        }
+
+        .carousel {
+            height: 50%;
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .p-box {
+            display: flex;
+            justify-content: space-between;
+            gap: 2px;
+        }
+
+        .box {
+            height: 350px;
+            width: 300px;
+            margin: 0px 12px;
+            padding: 40px;
+            border-radius: 10px;
+            -webkit-box-shadow: 1px 10px 30px -18px rgba(0, 0, 0, 0.95);
+            -moz-box-shadow: 1px 10px 30px -18px rgba(0, 0, 0, 0.95);
+            box-shadow: 10px 10px 30px -18px rgba(0, 0, 0, 0.95);
+            flex-shrink: 0;
+
+        }
+
+        .box button {
+            background-color: #F9C100;
+            color: #fff;
+            padding: 5px 8px;
+            border-radius: 5px;
+            border: none;
+            margin: 0px 0px 20px 0px;
+        }
+
+        .box hr {
+            width: 20%;
+            margin: 20px 0px;
+        }
+
+        .box h3 {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .box1 {
+            background-color: #3545EE;
+            color: #fff;
+        }
+
+        .btns {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            z-index: 99;
+            transform: translate(0%, -50%);
+            top: 50%;
+        }
+
+        .btn1,
+        .btn2 {
+            height: 50px;
+            width: 50px;
+            background-color: #fff;
+            border-radius: 50%;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="child1 c-width">
+            <img src="https://themeproducers.com/ceris/wp-content/uploads/2021/08/ceris_8-1600x800.jpg" alt="1"
+                srcset="">
+            <img src="https://themeproducers.com/ceris/wp-content/uploads/2021/08/ceris_105.jpg" alt="2" srcset="">
+            <img src="https://themeproducers.com/ceris/wp-content/uploads/2021/08/ceris_109-1600x800.jpg" alt="3"
+                srcset="">
+            <img src="https://themeproducers.com/ceris/wp-content/uploads/2021/08/ceris_112-1600x800.jpg" alt="4"
+                srcset="">
+            <img src="https://themeproducers.com/ceris/wp-content/uploads/2021/08/ceris_113-1600x800.jpg" alt="5"
+                srcset="">
+        </div>
+        <div class="child2 c-width"></div>
+
+        <div class="carosal-parent">
+            <div class="btns">
+                <button id="left-btn" class="btn1">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="right-btn" class="btn2" style="background-color: #3545EE;color: #fff;">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="carousel" id="carosal">
+                <div id="p-box" class="p-box">
+
+                </div>
+
+                <div class="p-box">
+                    <div class="box box1">
+                        <button>INSPIRATION</button>
+
+                        <h3>The Supreme Art of War is to Subdue the Enemy Without...</h3>
+
+                        <div style="background-color: #ffffff; margin: 20px 0px; width: 20%; height: 3px;"></div>
+
+
+
+                        <p>Whoever said “It’s not about the destination. It’s the journey” never flew on a long ...</p>
+
+                    </div>
+                    <div class="box box2" style="background-color: #fff;">
+                        <button>INSPIRATION</button>
+
+                        <h3>The Two Most Important Tools to Reconnect With Yo...</h3>
+
+                        <div style="background-color: #222222A6; margin: 20px 0px; width: 20%; height: 3px;"></div>
+
+                        <p>Whoever said “It’s not about the destination. It’s the journey” never flew on a long ...</p>
+
+
+                    </div>
+                </div>
+
+                <div class="p-box">
+                    <div class="box box1">
+                        <button>INSPIRATION</button>
+
+                        <h3>The Two Most Important Tools to Reconnect With Yo...</h3>
+
+                        <div style="background-color: #ffffff; margin: 20px 0px; width: 20%; height: 3px;"></div>
+
+
+
+                        <p>Whoever said “It’s not about the destination. It’s the journey” never flew on a long ...</p>
+
+                    </div>
+                    <div class="box box2" style="background-color: #fff;">
+                        <button>INSPIRATION</button>
+                        <h3>Relationships Aren’t Easy, But They’re Worth It</h3>
+                        <div style="background-color: #222222A6; margin: 20px 0px; width: 20%; height: 3px;"></div>
+
+                        <p>Whoever said “It’s not about the destination. It’s the journey” never flew on a long ...</p>
+
+
+                    </div>
+                </div>
+
+                <div class="p-box">
+                    <div class="box box1">
+                        <button style="background-color: #EE303A;">SPORT</button>
+                        <h3>Relationships Aren’t Easy, But They’re Worth It</h3>
+
+                        <div style="background-color: #ffffff; margin: 20px 0px; width: 20%; height: 3px;"></div>
+
+
+
+                        <p>Whoever said “It’s not about the destination. It’s the journey” never flew on a long ...</p>
+
+                    </div>
+                    <div class="box box2" style="background-color: #fff;">
+                        <button>INSPIRATION</button>
+                        <h3>Want to Strengthen Your Relationship? Embrace the Little...</h3>
+                        <div style="background-color: #222222A6; margin: 20px 0px; width: 20%; height: 3px;"></div>
+
+                        <p>Whoever said “It’s not about the destination. It’s the journey” never flew on a long ...</p>
+
+
+                    </div>
+                </div>
+
+                <div class="p-box">
+                    <div class="box box1">
+                        <button style="background-color: #EE303A;">SPORT</button>
+                        <h3>Want to Strengthen Your Relationship? Embrace the Little...</h3>
+
+                        <div style="background-color: #ffffff; margin: 20px 0px; width: 20%; height: 3px;"></div>
+
+                        <p>Whoever said “It’s not about the destination. It’s the journey” never flew on a long ...</p>
+
+                    </div>
+                    <div class="box box2" style="background-color: #fff;">
+                        <button style="background-color: #EE303A;">SPORT</button>
+                        <h3>Behind the Cover: The Great Wall Street Housing Grab</h3>
+                        <div style="background-color: #222222A6; margin: 20px 0px; width: 20%; height: 3px;"></div>
+
+                        <p>Whoever said “It’s not about the destination. It’s the journey” never flew on a long ...</p>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+        fetch('box.html').then(res => res.text()).then(html => document.getElementById("p-box").innerHTML = html)
+    })
+
+    let previous = document.getElementById("left-btn");
+    let next = document.getElementById("right-btn");
+
+    let carousel = document.querySelector('.carousel');
+    let box = document.querySelectorAll('.p-box');
+
+    let image = document.querySelector('.child1')
+    // let images = document.querySelectorAll('.child1')
+
+    let index = 0;
+
+    function slider() {
+        if (index >= box.length) index = 0;
+        if (index < 0) index = box.length - 1;
+        carousel.style.transform = `translateX(-${index * (100)}%)`
+        image.style.transform = `translateX(-${index * (100)}%)`
+    }
+
+    previous.addEventListener("click", function () {
+        index--;
+        slider()
+    })
+    next.addEventListener("click", function () {
+        index++;
+        slider()
+    })
+
+
+    setInterval(() => {
+        index++;
+        slider()
+    }, 5000)
+
+
+
+</script>
+
+</html>
