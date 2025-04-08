@@ -133,6 +133,32 @@
             border-radius: 50%;
             border: none;
         }
+
+        @media screen and (max-width:768px) {
+            .parent {
+                display: block;
+            }
+
+            .child1 {
+                width: 100%;
+            }
+
+            .child2 {
+                width: 100%;
+            }
+
+            .carosal-parent {
+                left: 50%;
+                top: 50%;
+            }
+        }
+
+        @media screen and (max-width:650px) {
+            .carosal-parent {
+                left: 0%;
+                top: 50%;
+            }
+        }
     </style>
 </head>
 
